@@ -3,7 +3,7 @@ const path = require('path');
 const app = express();
 const db = require('./db');
 
-app.use(express.static(path.join(__dirname, '../app/build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 // Get all books
 app.get('/api/books', (req, res) => {
@@ -12,7 +12,7 @@ app.get('/api/books', (req, res) => {
 
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../app/build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
 const PORT = 3000;
