@@ -3,14 +3,15 @@ import styled from 'styled-components';
 export const BookPreviewContainer = styled.div`
     display: flex;
     border: 1px solid black;
-    width: 400px;
+    width: 450px;
+    height: 200px;
     padding: 10px;
     gap: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    cursor: pointer;
+    cursor: ${({hasBook}) => hasBook ? 'pointer' : 'default'};    
     &:hover {
-        background-color: lightgray;
+        background-color: ${({hasBook}) => hasBook ? ' #ededed' : 'none'}; 
     }
 `;
 
@@ -28,6 +29,14 @@ export const BookDescriptionContainer = styled.div`
 `;
 
 export const BookDetailsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    justify-content: space-between;
+    max-width: 260px;
+`;
+
+export const BookHeader = styled.div`
     display: flex;
     flex-direction: column;
     text-align: start;
